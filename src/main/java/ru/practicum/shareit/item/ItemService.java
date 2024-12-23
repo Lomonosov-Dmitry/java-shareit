@@ -12,11 +12,11 @@ public interface ItemService {
 
     public ItemDto getItemById(Integer itemId);
 
-    public ItemDto create (Integer ownerId, ItemDto itemDto);
+    public ItemDto create(Integer ownerId, ItemDto itemDto);
 
-    public ItemDto update (Integer ownerId, ItemDto itemDto);
+    public ItemDto update(Integer ownerId, ItemDto itemDto);
 
-    public void delete (Integer itemId);
+    public void delete(Integer itemId);
 
     public Collection<ItemDto> searchForItem(String text);
 }

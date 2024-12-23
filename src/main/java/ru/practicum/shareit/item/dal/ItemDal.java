@@ -13,9 +13,9 @@ public interface ItemDal {
 
     public ItemDto getItemById(Integer itemId);
 
-    public ItemDto create (Item item);
+    public ItemDto create(Item item);
 
-    public ItemDto update (Item item);
+    public ItemDto update(Item item);
 
-    public void delete (Integer itemId);
+    public void delete(Integer itemId);
 }
