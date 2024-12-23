@@ -1,4 +1,4 @@
-package ru.practicum.shareit.user.dao;
+package ru.practicum.shareit.user.dal;
 
 import jakarta.validation.ValidationException;
 import org.springframework.stereotype.Repository;
@@ -8,12 +8,12 @@ import ru.practicum.shareit.user.User;
 import java.util.Collection;
 import java.util.HashMap;
 
-@Repository("InMemoryUserRepository")
-public class InMemoryUserRepository implements UserDao {
+@Repository("InMemoryUsersRepository")
+public class InMemoryUsersRepository implements UserDal {
     private final HashMap<Integer, User> users;
     private int counter;
 
-    public InMemoryUserRepository() {
+    public InMemoryUsersRepository() {
         this.users = new HashMap<>();
         counter = 0;
     }

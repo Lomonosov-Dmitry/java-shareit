@@ -2,16 +2,15 @@ package ru.practicum.shareit.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.practicum.shareit.user.dao.UserDao;
+import ru.practicum.shareit.user.dal.UserDal;
 
 import java.util.Collection;
-import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
-    private final UserDao usersRepository;
+    private final UserDal usersRepository;
 
-    public UserServiceImpl(@Autowired UserDao usersRepository) {
+    public UserServiceImpl(@Autowired UserDal usersRepository) {
         this.usersRepository = usersRepository;
     }
 

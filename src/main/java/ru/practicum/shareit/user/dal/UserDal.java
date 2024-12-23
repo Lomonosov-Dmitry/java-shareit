@@ -1,10 +1,10 @@
-package ru.practicum.shareit.user.dao;
+package ru.practicum.shareit.user.dal;
 
 import ru.practicum.shareit.user.User;
 
 import java.util.Collection;
 
-public interface UserDao {
+public interface UserDal {
 
     public Collection<User> getAllUsers();
 

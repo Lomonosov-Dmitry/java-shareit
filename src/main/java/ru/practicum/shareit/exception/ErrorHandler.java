@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
-@ControllerAdvice("ru.yandex.practicum.filmorate")
+@ControllerAdvice("ru.practicum.shareit")
 public class ErrorHandler {
 
     @ExceptionHandler
