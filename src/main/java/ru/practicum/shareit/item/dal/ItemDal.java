@@ -1,21 +1,20 @@
 package ru.practicum.shareit.item.dal;
 
-import ru.practicum.shareit.item.dto.ItemDto;
 import ru.practicum.shareit.item.model.Item;
 
 import java.util.Collection;
 
 public interface ItemDal {
 
-    public Collection<ItemDto> getAllItems();
+    Collection<Item> getAllItems();
 
-    public Collection<ItemDto> getAllItemsByOwner(Integer ownerId);
+    Collection<Item> getAllItemsByOwner(Integer ownerId);
 
-    public ItemDto getItemById(Integer itemId);
+    Item getItemById(Integer itemId);
 
-    public ItemDto create(Item item);
+    Item create(Item item);
 
-    public ItemDto update(Item item);
+    Item update(Item item);
 
-    public void delete(Integer itemId);
+    void delete(Integer itemId);
 }

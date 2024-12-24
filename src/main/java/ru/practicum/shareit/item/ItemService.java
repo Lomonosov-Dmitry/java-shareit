@@ -6,17 +6,17 @@ import java.util.Collection;
 
 public interface ItemService {
 
-    public Collection<ItemDto> getAllItems();
+    Collection<ItemDto> getAllItems();
 
-    public Collection<ItemDto> getAllItemsByOwner(Integer ownerId);
+    Collection<ItemDto> getAllItemsByOwner(Integer ownerId);
 
-    public ItemDto getItemById(Integer itemId);
+    ItemDto getItemById(Integer itemId);
 
-    public ItemDto create(Integer ownerId, ItemDto itemDto);
+    ItemDto create(Integer ownerId, ItemDto itemDto);
 
-    public ItemDto update(Integer ownerId, ItemDto itemDto);
+    ItemDto update(Integer ownerId, ItemDto itemDto);
 
-    public void delete(Integer itemId);
+    void delete(Integer itemId);
 
-    public Collection<ItemDto> searchForItem(String text);
+    Collection<ItemDto> searchForItem(String text);
 }

@@ -1,20 +1,20 @@
 package ru.practicum.shareit.user.dal;
 
-import ru.practicum.shareit.user.User;
+import ru.practicum.shareit.user.model.User;
 
 import java.util.Collection;
 
 public interface UserDal {
 
-    public Collection<User> getAllUsers();
+    Collection<User> getAllUsers();
 
-    public User getUserById(Integer userId);
+    User getUserById(Integer userId);
 
-    public User getUserByEmail(String email);
+    User getUserByEmail(String email);
 
-    public User createUser(User user);
+    User createUser(User user);
 
-    public User updateUser(User user);
+    User updateUser(User user);
 
-    public void deleteUser(Integer userId);
+    void deleteUser(Integer userId);
 }

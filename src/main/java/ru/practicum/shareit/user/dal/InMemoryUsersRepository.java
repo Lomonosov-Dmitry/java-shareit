@@ -3,7 +3,7 @@ package ru.practicum.shareit.user.dal;
 import jakarta.validation.ValidationException;
 import org.springframework.stereotype.Repository;
 import ru.practicum.shareit.exception.NotFoundException;
-import ru.practicum.shareit.user.User;
+import ru.practicum.shareit.user.model.User;
 
 import java.util.Collection;
 import java.util.HashMap;
