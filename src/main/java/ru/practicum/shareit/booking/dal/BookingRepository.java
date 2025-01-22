@@ -9,9 +9,12 @@ import java.util.Collection;
 
 public interface BookingRepository extends JpaRepository<Booking, Integer> {
     Collection<Booking> findAllByRequesterId(Integer requesterId);
+
     @Query(value = "select * from booking where item_id in (select id from items where owner = ?1)",
             nativeQuery = true)
     Collection<Booking> findAllByOwner(Integer ownerId);
+
     Collection<Booking> findAllByRequesterIdAndItemId(Integer requesterId, Integer itemId);
+
     Collection<Booking> findAllByItemIdAndStatusOrderByStartDateAsc(Integer itemId, BookingStatus status);
 }
