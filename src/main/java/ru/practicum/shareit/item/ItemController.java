@@ -4,7 +4,10 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import ru.practicum.shareit.item.dto.CommentDto;
 import ru.practicum.shareit.item.dto.ItemDto;
+import ru.practicum.shareit.item.dto.ItemDtoComments;
+import ru.practicum.shareit.item.dto.RequestForComment;
 
 import java.util.Collection;
 
@@ -20,14 +23,14 @@ public class ItemController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public Collection<ItemDto> getAllItemsById(@RequestHeader("X-Sharer-User-Id") Integer ownerId) {
+    public Collection<ItemDtoComments> getAllItemsById(@RequestHeader("X-Sharer-User-Id") Integer ownerId) {
         return itemService.getAllItemsByOwner(ownerId);
     }
 
     @GetMapping("/{itemId}")
     @ResponseStatus(HttpStatus.OK)
-    public ItemDto getItemById(@PathVariable Integer itemId) {
-        return itemService.getItemById(itemId);
+    public ItemDtoComments getItemById(@RequestHeader("X-Sharer-User-Id") Integer ownerId, @PathVariable Integer itemId) {
+        return itemService.getItemById(ownerId, itemId);
     }
 
     @PostMapping
@@ -49,4 +52,13 @@ public class ItemController {
     public Collection<ItemDto> searchForItem(@RequestParam String text) {
         return itemService.searchForItem(text);
     }
+
+    @PostMapping("/{itemId}/comment")
+    public CommentDto newComment(@RequestHeader("X-Sharer-User-Id") Integer userId,
+                                 @PathVariable Integer itemId,
+                                 @RequestBody RequestForComment text) {
+      return itemService.addComment(userId, itemId, text);
+    }
+
+
 }
