@@ -115,7 +115,7 @@ public class ItemServiceImpl implements ItemService {
     public CommentDto addComment(Integer userId, Integer itemId, RequestForComment text) {
         checkItem(itemId);
         checkUserById(userId);
-        Collection<Booking> bookings = bookingRepository.findAllByRequesterIdAndItemId(userId, itemId);
+        Collection<Booking> bookings = bookingRepository.findAllByBookerIdAndItemId(userId, itemId);
         if (bookings.isEmpty())
             throw new ValidationException("Не арендатор!", "Вы не брали эту вещь в аренду!");
         bookings = bookings.stream().sorted(Comparator.comparing(Booking::getEndDate)).toList();
