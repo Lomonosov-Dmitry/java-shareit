@@ -55,7 +55,7 @@ public class InMemoryUsersRepository implements UserDal {
         if (oldUser == null) {
             throw new NotFoundException("Не найдено!", "Не найден пользователь с ID = " + user.getId());
         }
-        if (getUserByEmail(user.getEmail()) != null && getUserByEmail(user.getEmail()).getId() != user.getId())
+        if (getUserByEmail(user.getEmail()) != null && !getUserByEmail(user.getEmail()).getId().equals(user.getId()))
             throw new ValidationException("Такой email уже есть!");
         if (user.getName() != null) {
             oldUser.setName(user.getName());
