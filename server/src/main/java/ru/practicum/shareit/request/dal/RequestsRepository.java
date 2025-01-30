@@ -9,7 +9,9 @@ import java.util.Collection;
 
 @Repository
 public interface RequestsRepository extends JpaRepository<ItemRequest, Integer> {
+
     Collection<ItemRequest> findAllByUserIdOrderByCreatedDesc(Integer userId);
+
     @Query(value = "select * from requests where user_id <> ?1", nativeQuery = true)
     Collection<ItemRequest> findAllExceptUserId(Integer userId);
 }
