@@ -29,8 +29,6 @@ public class BookingService {
         checkUser(dto.getBookerId());
         if (itemsRepository.findById(dto.getItemId()).isEmpty())
             throw new NotFoundException("Предмет не найден!", "Не найден предмет с ID = " + dto.getItemId());
-        if (dto.getStart().isEqual(dto.getEnd()))
-            throw new ValidationException("Неверные сроки аренды!", "Даты начала и завершения аренды не могут совпадать!");
         if (!itemsRepository.findById(dto.getItemId()).get().getAvailable())
             throw new ValidationException("Недоступно!", "Предмет не доступен для аренды!");
 

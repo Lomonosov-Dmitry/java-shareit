@@ -20,7 +20,6 @@ public class ItemRequestController {
 
     @PostMapping
     public ItemRequestDto addRequest(@RequestBody ItemRequestDto dto) {
-        //dto.setUserId(owner);
         return itemRequestService.addRequest(dto);
     }
 
